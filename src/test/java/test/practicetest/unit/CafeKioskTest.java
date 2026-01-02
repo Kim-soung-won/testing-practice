@@ -1,5 +1,6 @@
 package test.practicetest.unit;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import test.practicetest.unittest.CafeKiosk;
 import test.practicetest.unittest.beverage.Americano;
@@ -14,6 +15,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 
 public class CafeKioskTest {
 
+    @DisplayName("단일 낱개 음료 키오스크에서 담는 기능")
     @Test
     void add(){
         CafeKiosk kiosk = new CafeKiosk();
@@ -23,6 +25,7 @@ public class CafeKioskTest {
         assertThat(kiosk.getBeverages().get(0).getName()).isEqualTo("아메리카노");
     }
 
+    @DisplayName("단일 음료 여러잔 한번에 키오스크에 추가")
     @Test
     void addSeveralBeverages(){
         CafeKiosk kiosk = new CafeKiosk();
@@ -34,6 +37,7 @@ public class CafeKioskTest {
         assertThat(kiosk.getBeverages().get(1).getName()).isEqualTo("아메리카노");
     }
 
+    @DisplayName("0개 이하의 음료 키오스크 추가시 Exception 발생")
     @Test
     void addZeroBeverages(){
         CafeKiosk kiosk = new CafeKiosk();
@@ -44,6 +48,7 @@ public class CafeKioskTest {
                 .hasMessage("0잔 이하 주문은 불가능합니다.");
     }
 
+    @DisplayName("단일 음료 키오스크에서 제거하는 기능")
     @Test
     void remove(){
         CafeKiosk kiosk = new CafeKiosk();
@@ -56,6 +61,7 @@ public class CafeKioskTest {
         assertThat(kiosk.getBeverages().size()).isEqualTo(0);
     }
 
+    @DisplayName("키오스크 담은 음료 초기화")
     @Test
     void clear() {
         CafeKiosk kiosk = new CafeKiosk();
@@ -71,6 +77,7 @@ public class CafeKioskTest {
         assertThat(kiosk.getBeverages().size()).isEqualTo(0);
     }
 
+    @DisplayName("주문 금액 계산")
     @Test
     void calculateTotalPrice() {
         CafeKiosk kiosk = new CafeKiosk();
@@ -85,6 +92,7 @@ public class CafeKioskTest {
     }
 
 
+    @DisplayName("영업시간 중 주문 실행")
     @Test
     void createOrderWithInsideOpenTime() {
         CafeKiosk kiosk = new CafeKiosk();
@@ -97,6 +105,7 @@ public class CafeKioskTest {
         assertThat(order.getBeverages().get(0).getName()).isEqualTo("아메리카노");
     }
 
+    @DisplayName("영업시간 외 주문 실행시 예외 발생")
     @Test
     void createOrderWithOutsideOpenTime() {
         CafeKiosk kiosk = new CafeKiosk();
