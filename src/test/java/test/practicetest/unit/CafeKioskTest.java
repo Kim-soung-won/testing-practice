@@ -77,18 +77,31 @@ public class CafeKioskTest {
         assertThat(kiosk.getBeverages().size()).isEqualTo(0);
     }
 
-    @DisplayName("주문 금액 계산")
+    @DisplayName("주문 목록에 담긴 음료들의 총 금액 계산")
     @Test
     void calculateTotalPrice() {
+        // given
         CafeKiosk kiosk = new CafeKiosk();
         Beverage americano = new Americano();
         Beverage latte = new Latte();
         kiosk.add(americano, 2);
         kiosk.add(latte, 1);
 
+        // when
         int totalPrice = kiosk.calculateTotalPrice();
 
+        // then
         assertThat(totalPrice).isEqualTo(10000);
+    }
+
+    @DisplayName("BDD Template Intellij live Template 속성 설정 -> 'test' 자동완성 ")
+    @Test
+    void test(){
+        //given
+
+        //when
+
+        //then
     }
 
 
