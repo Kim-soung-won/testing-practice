@@ -3,7 +3,7 @@ package test.practicetest.unittest;
 import test.practicetest.unittest.beverage.Americano;
 import test.practicetest.unittest.beverage.Latte;
 
-public class CafeKioskRunner {
+class CafeKioskRunner {
 
     public static void main(String[] args) {
         CafeKiosk kiosk = new CafeKiosk();
