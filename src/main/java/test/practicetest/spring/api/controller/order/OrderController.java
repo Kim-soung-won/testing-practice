@@ -6,15 +6,19 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import test.practicetest.spring.api.service.order.dto.OrderCreateRequest;
 import test.practicetest.spring.api.service.order.OrderService;
+import test.practicetest.spring.api.service.order.dto.OrderCreateResponse;
+
+import java.time.LocalDateTime;
 
 @RestController
 @RequiredArgsConstructor
 public class OrderController {
-    private OrderService orderService;
+    private final OrderService orderService;
 
     @PostMapping("/api/v1/orders/new")
-    public void createOrder(@RequestBody OrderCreateRequest dto) {
-        orderService.createOrder(dto);
+    public OrderCreateResponse createOrder(@RequestBody OrderCreateRequest dto) {
+        LocalDateTime registeredDateTime = LocalDateTime.now();
 
+        return orderService.createOrder(dto, registeredDateTime);
     }
 }

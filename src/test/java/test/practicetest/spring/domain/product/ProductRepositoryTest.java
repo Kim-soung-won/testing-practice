@@ -14,7 +14,8 @@ import static test.practicetest.spring.domain.product.ProductType.HANDMADE;
 
 /**
  * SpringBootTest : 테스트시 Spring을 실행함
- * DataJpaTest : JPA관련 Bean만 사용해서 테스트하여 SpringBootTest보다 좀 빠름
+ * DataJpaTest : JPA관련 Bean만 사용해서 테스트하여 SpringBootTest보다 좀 빠르고
+ *              Transactional이 기본으로 걸려있음
  */
 @ActiveProfiles("test")
 //@SpringBootTest
