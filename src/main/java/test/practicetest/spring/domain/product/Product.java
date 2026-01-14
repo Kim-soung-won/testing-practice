@@ -5,6 +5,7 @@ import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import test.practicetest.spring.api.controller.product.dto.ProductCreateRequest;
 import test.practicetest.spring.domain.base.BaseEntity;
 
 @Getter
