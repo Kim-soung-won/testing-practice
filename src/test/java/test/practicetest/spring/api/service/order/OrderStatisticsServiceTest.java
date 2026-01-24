@@ -48,8 +48,11 @@ class OrderStatisticsServiceTest {
 
     private static final LocalDateTime now = LocalDateTime.of(2023, 3, 5, 0, 0);
 
+    // MockitoBean을 통해 MailSendClient를 Mock 객체로 주입받는다.
     @MockitoBean
     private MailSendClient mailSendClient;
+
+
 
     @AfterEach
     void tearDown() {

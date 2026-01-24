@@ -20,7 +20,8 @@ public class MailService {
                     .title(title)
                     .content(content)
                     .build());
+            return true;
         }
-        return true;
+        return false;
     }
 }
